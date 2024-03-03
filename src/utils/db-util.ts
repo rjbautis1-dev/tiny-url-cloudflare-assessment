@@ -1,5 +1,4 @@
-import { ModelCtor, Sequelize, Model, Repository } from 'sequelize-typescript';
-import { ClickEvent } from '../models/click.model';
+import { ModelCtor, Sequelize } from 'sequelize-typescript';
 
 export interface IConfig {
     db: string;
@@ -9,9 +8,9 @@ export interface IConfig {
     port: number;
 }
 
-export class ShortUrlsDatabase {
+export class SequelizeInstance {
 
-    private sequelize: Sequelize;
+    public sequelize: Sequelize;
 
     constructor(config: IConfig, models: ModelCtor[]) {
         this.sequelize = new Sequelize({

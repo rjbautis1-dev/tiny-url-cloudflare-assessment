@@ -10,7 +10,9 @@ import {
 export interface IShortUrl {
     shortUrl: string;
     longUrl: string;
-    expiresAt?: string;
+    expiresAt?: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 @Table({ tableName: 'short_urls' })
@@ -28,14 +30,14 @@ export class ShortUrl extends Model<IShortUrl> {
     longUrl!: string;
 
     @CreatedAt
-    createdAt!: string;
+    createdAt!: Date;
 
     @UpdatedAt
-    updatedAt!: string;
+    updatedAt!: Date;
 
     @Column({
         type: DataType.DATE,
     })
-    expiresAt?: string;
+    expiresAt?: Date;
 }
 

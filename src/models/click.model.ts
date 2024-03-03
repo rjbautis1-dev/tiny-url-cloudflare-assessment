@@ -11,6 +11,8 @@ import { ShortUrl } from './short-url.model';
 
 export interface IClickEvent {
     shortUrl: string;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 @Table({ tableName: 'clicks' })
@@ -30,9 +32,9 @@ export class ClickEvent extends Model<IClickEvent> {
     shortUrl!: string;
 
     @CreatedAt
-    createdAt!: string;
+    createdAt!: Date;
 
     @UpdatedAt
-    updatedAt!: string;
+    updatedAt!: Date;
 }
 
