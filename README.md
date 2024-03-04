@@ -4,9 +4,9 @@
 
 ### Features
 
-#### Create a short URL from a long URL.
+1. Create a short URL from a long URL
 
-**POST /shortUrl**
+Endpoint: `POST /shortUrl`
 
 Supported request body properties:
 
@@ -22,9 +22,9 @@ curl --location 'http://localhost:8080/shortUrl' \
 }'
 ```
 
-#### Redirect a short URL to a long URL.
+2. Redirect a short URL to a long URL.
 
-**GET /:shortUrl**
+Endpoint: `GET /:shortUrl`
 
 Supported request parameter properties:
 
@@ -34,9 +34,9 @@ Supported request parameter properties:
 curl --location http://localhost:8080/M8QNVZqIri0Q
 ```
 
-#### List the number of times a short url has been accessed in the last 24 hours (`OneDay`), past week (`OneWeek`), and all time (`AllTime`).
+3. List the number of times a short url has been accessed in the last 24 hours (`OneDay`), past week (`OneWeek`), and all time (`AllTime`).
 
-**GET /shortUrl/:shortUrl/clicks**
+Endpoint: `GET /shortUrl/:shortUrl/clicks`
 
 Supported request parameter properties:
 
@@ -50,19 +50,17 @@ Supported request query properties:
 curl --location 'http://localhost:8080/shortUrl/M8QNVZqIri0Q/clicks?queryPeriod=OneWeek'
 ```
 
-#### - Short URLs can be deleted.
+4. Short URLs can be deleted.
 
-**DELETE /shortUrl/:shortUrl**
+Endpoint: `DELETE /shortUrl/:shortUrl`
 
 Supported request parameter properties:
 
 * `shortUrl` - short URL identifier
 
+5. Data persistence.
 
-#### Other features
-
-- Data persistence.
-- Logging for troubleshooting.
+6. Logging for troubleshooting.
 
 ### Prerequisites
 
