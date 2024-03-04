@@ -18,7 +18,7 @@ curl --location 'http://localhost:8080/shortUrl' \
 --header 'Content-Type: application/json' \
 --data '{
     "longUrl": "https://www.cloudflare.com/",
-    "expiresAt": "2025-01-01"
+    "expiresAt": "2999-01-01"
 }'
 ```
 
