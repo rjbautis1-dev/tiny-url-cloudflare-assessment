@@ -4,7 +4,7 @@ import { BaseHandler } from "./base";
 import _ from 'lodash';
 import moment from 'moment';
 import { hasExpired } from "../utils/expiration-util";
-import { ClickEventDao } from "../dao/click";
+import { ClickEventDao } from "../dao/click-event";
 import { nanoid } from 'nanoid';
 
 type CreateShortUrlHandlerRequestParams = {};

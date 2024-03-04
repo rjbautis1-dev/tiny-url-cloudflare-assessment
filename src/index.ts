@@ -1,10 +1,10 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import { IConfig, SequelizeInstance } from './utils/db-util';
-import { ClickEvent } from './models/click.model';
+import { ClickEvent } from './models/click-event.model';
 import { ShortUrl } from './models/short-url.model';
 import { ModelCtor } from 'sequelize-typescript';
-import { ClickEventDao } from './dao/click';
+import { ClickEventDao } from './dao/click-event';
 import { ShortUrlDao } from './dao/short-url';
 import { ShortUrlRouter } from './short-url.router';
 

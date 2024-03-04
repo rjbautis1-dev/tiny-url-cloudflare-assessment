@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ShortUrlDao } from "../dao/short-url";
 import { BaseHandler } from "./base";
 import _ from 'lodash';
-import { ClickEventDao } from "../dao/click";
+import { ClickEventDao } from "../dao/click-event";
 
 /**
  * 

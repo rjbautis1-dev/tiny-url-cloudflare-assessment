@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { Repository } from "sequelize-typescript";
-import { ClickEvent, IClickEvent } from "../models/click.model"
+import { ClickEvent, IClickEvent } from "../models/click-event.model"
 import { Op, WhereOptions } from "sequelize";
 
 export enum QUERY_PERIOD {

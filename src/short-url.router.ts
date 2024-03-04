@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { ShortUrlDao } from "./dao/short-url";
-import { ClickEventDao } from "./dao/click";
+import { ClickEventDao } from "./dao/click-event";
 import { GetShortUrlHandler, GetShortUrlHandlerRequest, GetShortUrlHandlerResponse } from "./handlers/get-short-url";
 import { CreateShortUrlHandler, CreateShortUrlHandlerRequest, CreateShortUrlHandlerResponse } from "./handlers/create-short-url";
 import { DeleteShortUrlHandler, DeleteShortUrlHandlerRequest, DeleteShortUrlHandlerResponse } from "./handlers/delete-short-url";

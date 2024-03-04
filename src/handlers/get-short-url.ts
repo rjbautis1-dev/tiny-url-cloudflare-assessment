@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ShortUrlDao } from "../dao/short-url";
-import { ClickEventDao } from "../dao/click";
+import { ClickEventDao } from "../dao/click-event";
 import { BaseHandler } from "./base";
 import _ from "lodash";
 import { hasExpired } from "../utils/expiration-util";

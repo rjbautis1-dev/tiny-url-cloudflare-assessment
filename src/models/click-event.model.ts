@@ -15,7 +15,7 @@ export interface IClickEvent {
     updatedAt?: Date;
 }
 
-@Table({ tableName: 'clicks' })
+@Table({ tableName: 'click_events' })
 export class ClickEvent extends Model<IClickEvent> {
 
     @Column({
