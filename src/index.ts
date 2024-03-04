@@ -1,11 +1,12 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from 'express';
 import dotenv from 'dotenv';
-import { IConfig, SequelizeInstance } from "./utils/db-util";
-import { ClickEvent } from "./models/click.model";
-import { ShortUrl } from "./models/short-url.model";
-import { ModelCtor } from "sequelize-typescript";
-import { ClickEventDao } from "./dao/click";
-import { ShortUrlDao } from "./dao/short-url";
+import { IConfig, SequelizeInstance } from './utils/db-util';
+import { ClickEvent } from './models/click.model';
+import { ShortUrl } from './models/short-url.model';
+import { ModelCtor } from 'sequelize-typescript';
+import { ClickEventDao } from './dao/click';
+import { ShortUrlDao } from './dao/short-url';
+import { ShortUrlRouter } from './short-url.router';
 
 (async () => {
     dotenv.config();
@@ -28,9 +29,8 @@ import { ShortUrlDao } from "./dao/short-url";
     const clickEventDao = new ClickEventDao(db.sequelize.getRepository(ClickEvent));
     const shortUrlDao = new ShortUrlDao(db.sequelize.getRepository(ShortUrl));
 
-    app.get("/", (req: Request, res: Response) => {
-        res.send("Express + TypeScript Server");
-    });
+    app.use(express.json());
+    app.use('/', new ShortUrlRouter(shortUrlDao, clickEventDao).router)
 
     app.listen(port, () => {
         console.log(`[server]: Server is running at http://localhost:${port}`);

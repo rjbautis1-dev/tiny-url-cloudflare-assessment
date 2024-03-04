@@ -12,6 +12,11 @@ export class SequelizeInstance {
 
     public sequelize: Sequelize;
 
+    /**
+     * ORM for the data layer (postgres)
+     * @param config 
+     * @param models 
+     */
     constructor(config: IConfig, models: ModelCtor[]) {
         this.sequelize = new Sequelize({
             repositoryMode: true,
@@ -29,10 +34,10 @@ export class SequelizeInstance {
     public async connect() {
         await this.sequelize.authenticate()
             .then(() => {
-            console.log("Successfully authenticated to the DB.");
+                console.log("Successfully authenticated to the DB.");
             })
             .catch((err) => {
-            console.error("Unable to connect to the DB:", err);
+                console.error("Unable to connect to the DB:", err);
             });
 
         await this.sequelize

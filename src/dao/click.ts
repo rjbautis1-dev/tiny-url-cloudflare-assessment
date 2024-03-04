@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { Repository } from "sequelize-typescript";
 import { ClickEvent, IClickEvent } from "../models/click.model"
-import { WhereOptions } from "sequelize";
+import { Op, WhereOptions } from "sequelize";
 
 export enum QUERY_PERIOD {
     ONE_DAY,
@@ -11,7 +11,7 @@ export enum QUERY_PERIOD {
 
 interface IClickEventDao {
     create(params: { shortUrl: string }): Promise<ClickEvent>
-    list(params: { shortUrl: string, queryPeriod: QUERY_PERIOD }): Promise<number>
+    getCount(params: { shortUrl: string, queryPeriod: QUERY_PERIOD }): Promise<number>
     delete(params: { shortUrl: string }): Promise<void>
 }
 
@@ -29,7 +29,7 @@ export class ClickEventDao implements IClickEventDao {
         });
     }
 
-    public async list(params: { shortUrl: string, queryPeriod: QUERY_PERIOD}): Promise<number> {
+    public async getCount(params: { shortUrl: string, queryPeriod: QUERY_PERIOD}): Promise<number> {
         const whereClause: WhereOptions<IClickEvent> = {
             shortUrl: params.shortUrl
         }
@@ -38,11 +38,13 @@ export class ClickEventDao implements IClickEventDao {
         switch (params.queryPeriod) {
             case QUERY_PERIOD.ONE_DAY:
                 currentMoment.subtract(1, 'days');
-                whereClause.createdAt = currentMoment.toDate();
+                whereClause.createdAt = { [Op.gte]: currentMoment.toDate() };
+                break;
 
             case QUERY_PERIOD.ONE_WEEK:
                 currentMoment.subtract(1, 'week');
-                whereClause.createdAt = currentMoment.toDate();
+                whereClause.createdAt = { [Op.gte]: currentMoment.toDate() };
+                break
 
             case QUERY_PERIOD.ALL_TIME:
                 break;
