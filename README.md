@@ -58,6 +58,10 @@ Supported request parameter properties:
 
 * `shortUrl` - short URL identifier
 
+```bash
+curl --location --request DELETE 'http://localhost:8080/shortUrl/if-n1cmLMDUw'
+```
+
 5. Data persistence.
 
 6. Logging for troubleshooting.
