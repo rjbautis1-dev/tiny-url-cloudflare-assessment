@@ -4,13 +4,13 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   verbose: true,
   testMatch: [
-    '**/test/unit/**/*.ts'
+    '**/test/integration/**/*.ts'
   ],
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
   collectCoverage: true,
-  coverageDirectory: 'coverage/unit',
+  coverageDirectory: 'coverage/integration',
   coveragePathIgnorePatterns: [
     "/node_modules/"
   ]

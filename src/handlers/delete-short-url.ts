@@ -4,9 +4,6 @@ import { BaseHandler } from "./base";
 import _ from 'lodash';
 import { ClickEventDao } from "../dao/click-event";
 
-/**
- * 
- */
 type DeleteShortUrlHandlerRequestParams = {
     shortUrl: string;
 };
