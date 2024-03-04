@@ -31,7 +31,7 @@ Supported request parameter properties:
 * `shortUrl` - short URL identifier
 
 ```bash
-curl --location http://localhost:8080/M8QNVZqIri0Q
+curl --location http://localhost:8080/<replace with short URL ID>
 ```
 
 3. List the number of times a short url has been accessed in the last 24 hours (`OneDay`), past week (`OneWeek`), and all time (`AllTime`).
@@ -47,7 +47,7 @@ Supported request query properties:
 * `queryPeriod` - (optional) `OneDay`, `OneWeek`, or `AllTime`
 
 ```bash
-curl --location 'http://localhost:8080/shortUrl/M8QNVZqIri0Q/clicks?queryPeriod=OneWeek'
+curl --location 'http://localhost:8080/shortUrl/<replace with short URL ID>/clicks?queryPeriod=OneWeek'
 ```
 
 4. Short URLs can be deleted.
@@ -59,7 +59,7 @@ Supported request parameter properties:
 * `shortUrl` - short URL identifier
 
 ```bash
-curl --location --request DELETE 'http://localhost:8080/shortUrl/if-n1cmLMDUw'
+curl --location --request DELETE 'http://localhost:8080/shortUrl/<replace with short URL ID>'
 ```
 
 5. Data persistence.
