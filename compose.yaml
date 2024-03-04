@@ -15,10 +15,11 @@ services:
       - database
     env_file: ./.env
     environment:
-      NODE_ENV: development
+      # NODE_ENV: development  # Uncomment this line and comment out line below to deploy development server.
+      NODE_ENV: production
     ports:
       - $EXPRESS_PORT:$EXPRESS_PORT
-    command: npm run start:dev
+    # command: npm run start:dev  # Uncomment this line to deploy development server.
     volumes:
       - ./:/usr/src/app
 
