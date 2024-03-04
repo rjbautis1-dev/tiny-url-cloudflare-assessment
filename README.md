@@ -110,4 +110,4 @@ I created a separate relationship database table that creates a new record every
 
 3. Handling expired short URLs in application code.
 
-I opted to surface any expired short URL record as "not found" to the client in the application code. When a client tries to create a new short URL where an expired entry already exists in the database, then the application code will try to delete the original entry and all corresponding click event entries first. In an idea world, expired records should be deleted by an async cron job that scans the table instead of in the application code.
+I opted to surface any expired short URL record as "not found" to the client in the application code. When a client tries to create a new short URL where an expired entry with the same short URL already exists in the database, then the application code will delete that expired entry and all corresponding click event entries first. In an idea world, expired records should be deleted by an async cron job that scans the table instead of in the application code.
