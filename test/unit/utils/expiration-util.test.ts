@@ -1,4 +1,4 @@
-import { hasExpired } from "../../src/utils/expiration-util";
+import { hasExpired } from "../../../src/utils/expiration-util";
 
 describe('hasExpired', () => {
 

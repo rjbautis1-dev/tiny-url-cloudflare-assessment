@@ -1,8 +1,8 @@
-import { ClickEventDao } from "../../src/dao/click-event";
-import { ShortUrlDao } from "../../src/dao/short-url";
+import { ClickEventDao } from "../../../src/dao/click-event";
+import { ShortUrlDao } from "../../../src/dao/short-url";
 import { createRequest, createResponse } from 'node-mocks-http';
-import { IShortUrl } from "../../src/models/short-url.model";
-import { GetShortUrlHandler, GetShortUrlHandlerRequest } from "../../src/handlers/get-short-url";
+import { IShortUrl } from "../../../src/models/short-url.model";
+import { GetShortUrlHandler, GetShortUrlHandlerRequest } from "../../../src/handlers/get-short-url";
 
 describe('GetShortUrl', () => {
     let shortUrlDaoMock: ShortUrlDao;
@@ -31,10 +31,10 @@ describe('GetShortUrl', () => {
             createdAt: mockDate
         };
 
-        shortUrlDaoMock = jest.genMockFromModule<ShortUrlDao>('../../src/dao/short-url');
+        shortUrlDaoMock = jest.genMockFromModule<ShortUrlDao>('../../../src/dao/short-url');
         shortUrlDaoMock.get = jest.fn();
         
-        clickEventDaoMock = jest.genMockFromModule<ClickEventDao>('../../src/dao/click-event');
+        clickEventDaoMock = jest.genMockFromModule<ClickEventDao>('../../../src/dao/click-event');
         clickEventDaoMock.create = jest.fn();
 
         handler = new GetShortUrlHandler(shortUrlDaoMock, clickEventDaoMock);

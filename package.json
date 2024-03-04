@@ -8,7 +8,7 @@
     "build": "tsc",
     "start:dev": "nodemon --watch src --exec 'ts-node' src/index.ts",
     "start": "node ./build/index.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage -c jest.config.unit.ts"
   },
   "keywords": [],
   "author": "Ryan Bautista <rjbautis1.dev@gmail.com>",

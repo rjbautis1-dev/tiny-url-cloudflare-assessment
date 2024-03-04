@@ -1,7 +1,7 @@
 import { Repository } from "sequelize-typescript";
 import { Op } from "sequelize";
-import { ShortUrlDao } from "../../src/dao/short-url";
-import { ShortUrl } from "../../src/models/short-url.model";
+import { ShortUrlDao } from "../../../src/dao/short-url";
+import { ShortUrl } from "../../../src/models/short-url.model";
 
 describe('ShortUrlDao', () => {
     let shortUrlRepoMock: Repository<ShortUrl>;

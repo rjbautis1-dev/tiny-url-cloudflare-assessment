@@ -1,6 +1,6 @@
 import { Repository } from "sequelize-typescript";
-import { ClickEvent } from "../../src/models/click-event.model";
-import { ClickEventDao, QUERY_PERIOD } from "../../src/dao/click-event";
+import { ClickEvent } from "../../../src/models/click-event.model";
+import { ClickEventDao, QUERY_PERIOD } from "../../../src/dao/click-event";
 import { Op } from "sequelize";
 
 describe('ClickEventDao', () => {
